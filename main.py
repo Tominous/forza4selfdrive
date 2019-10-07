@@ -41,7 +41,7 @@ def main():
         keys = key_check()
         output=keys_to_output(keys)
         training_data.append([screen, output])
-        #print('Frame took {} seconds'.format(time.time()-last_time))
+        print('Frame took {} seconds'.format(time.time()-last_time))
         last_time = time.time()
 
         if len(training_data) % 500 == 0:
