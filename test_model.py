@@ -17,9 +17,9 @@ MODEL_NAME = 'pyforza-car-slow-{}-{}-{}-epochs-240K-data.model'.format(LR, 'alex
 t_time = 0.09
 
 def straight():
-##    if random.randrange(4) == 2:
-##        ReleaseKey(W)
-##    else:
+    if random.randrange(4) == 2:
+        ReleaseKey(W)
+    else:
     PressKey(W)
     ReleaseKey(A)
     ReleaseKey(D)
@@ -27,9 +27,9 @@ def straight():
 def left():
     PressKey(W)
     PressKey(A)
-    #ReleaseKey(W)
+    ReleaseKey(W)
     ReleaseKey(D)
-    #ReleaseKey(A)
+    ReleaseKey(A)
     time.sleep(t_time)
     ReleaseKey(A)
 
@@ -37,8 +37,8 @@ def right():
     PressKey(W)
     PressKey(D)
     ReleaseKey(A)
-    #ReleaseKey(W)
-    #ReleaseKey(D)
+    ReleaseKey(W)
+    ReleaseKey(D)
     time.sleep(t_time)
     ReleaseKey(D)
     
@@ -56,7 +56,7 @@ def main():
         
         if not paused:
             # 800x600 windowed mode
-            #screen =  np.array(ImageGrab.grab(bbox=(0,40,800,640)))
+            screen =  np.array(ImageGrab.grab(bbox=(0,40,800,640)))
             screen = grab_screen(region=(0,40,800,640))
             print('loop took {} seconds'.format(time.time()-last_time))
             last_time = time.time()
